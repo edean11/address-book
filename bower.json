@@ -1,0 +1,24 @@
+{
+  "name": "address-book",
+  "version": "0.0.0",
+  "homepage": "https://github.com/edean11/address-book",
+  "authors": [
+    "thedean11 <edean1010@gmail.com>"
+  ],
+  "description": "address book",
+  "main": "public/index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "lodash": "~3.1.0",
+    "skeleton": "~2.0.4"
+  }
+}
