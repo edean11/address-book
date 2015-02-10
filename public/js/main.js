@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
 function hello() {
   return 'world';
 }
 
 //Selector variables 
-  var $newContactContainer = $('.newContactContainer');
   var $newContactButton = $('.newContactButton');
   var $addContactButton = $('.addContactButton');
   var $tbody = $('#tbody');
@@ -51,7 +50,7 @@ function hello() {
     var $remove = $('<td><button class="removeButton">Remove</button></td>');
 
     var  url = 'https://address-booking.firebaseio.com/addressbook.json';
-    var object = {photo: $photoInput, name: $nameInput,  phonenumber: $phoneNumberInput, email: $emailInput, twitter: $twitterInput, instagram: $instagramInput}
+    var object = {photo: $photoInput, name: $nameInput,  phonenumber: $phoneNumberInput, email: $emailInput, twitter: $twitterInput, instagram: $instagramInput};
 
     $.post(url, JSON.stringify(object), function(res){
       $tr.attr('data-uuid', res.name);
