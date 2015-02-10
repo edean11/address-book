@@ -40,5 +40,6 @@ tbody button {
 }
 
 .table-container {
-  margin: 5px 40px;
+  margin: 5px auto;
+  width: 80%;
 }

@@ -60,14 +60,12 @@ function hello() {
     $tr.append($twitterTd);$tr.append($instagramTd);$tr.append($remove);
     $tbody.append($tr);
 
-    console.log($tbody.children());
   }
 
 // On Remove Button Click, Remove ROw from Table and Database 
   $tbody.on("click", "button", function(){
     var $tr = $(this).closest('tr');
     var uuid = $tr.data('uuid');
-    console.log(uuid);
     var url = 'https://address-booking.firebaseio.com/addressbook/'+uuid+'.json';
     $.ajax({url: url, type:'DELETE'});
     $tr.remove();
