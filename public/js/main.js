@@ -13,6 +13,7 @@ var $newContactButton = $('.newContactButton'),
     $hiddenContainer = $('.hiddenContainer'),
     FIREBASE_URL = 'https://address-booking.firebaseio.com',
     fb           = new Firebase(FIREBASE_URL);
+    console.log(fb);
 
 
 ////////////////////////////////
@@ -41,6 +42,8 @@ var $newContactButton = $('.newContactButton'),
         } else {}
       }
     );
+
+    console.log(fb);
   });
 
   $('.loginButton').click(function(event){
@@ -114,7 +117,7 @@ var $newContactButton = $('.newContactButton'),
 /////////////// New Contact /////////////////////
 /////////////////////////////////////////////////
 
-// On New Contact Click, Create A Table Row
+// On New/Add Contact Click, Create A Table Row
 
   $newContactButton.click(function(evt){
     evt.preventDefault();
@@ -130,36 +133,8 @@ var $newContactButton = $('.newContactButton'),
 
   // add row to table function
   function addRowToTable(){
-
     createTableElementsFromInputs();
     postTableElementsFromInputs();
-
-    //var $tr = $('<tr class="tableRow"></tr>');
-    //var $nameInput = $('#nameInput').val();
-      //var $nameTd = $('<td>'+$nameInput+'</td>');
-    //var $phoneNumberInput = $('#phoneNumberInput').val();
-      //var $phoneNumberTd = $('<td>'+$phoneNumberInput+'</td>');
-    //var $emailInput = $('#emailInput').val();
-      //var $emailTd = $('<td>'+$emailInput+'</td>');
-    //var $twitterInput = $('#twitterInput').val();
-      //var $twitterTd = $('<td>'+$twitterInput+'</td>');
-    //var $instagramInput = $('#instagramInput').val();
-      //var $instagramTd = $('<td>'+$instagramInput+'</td>');
-    //var $photoInput = $('#photoInput').val();
-      //var $photoTd = $('<td><img src='+$photoInput+'></img></td>');
-    //var $remove = $('<td><button class="removeButton">Remove</button></td>');
-
-    //var  url = FIREBASE_URL + '/users/' + fb.getAuth().uid + '/data/friends.json';
-    //var object = {photo: $photoInput, name: $nameInput,  phonenumber: $phoneNumberInput, email: $emailInput, twitter: $twitterInput, instagram: $instagramInput};
-
-    //$.post(url, JSON.stringify(object), function(res){
-      //$tr.attr('data-uuid', res.name);
-    //});
-
-    //$tr.append($photoTd);$tr.append($nameTd);$tr.append($phoneNumberTd);$tr.append($emailTd);
-    //$tr.append($twitterTd);$tr.append($instagramTd);$tr.append($remove);
-    //$tbody.append($tr);
-
   }
 
   function createTableElementsFromInputs(){
