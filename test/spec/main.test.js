@@ -13,41 +13,41 @@ describe('hello', function () {
   });
 });
 
-describe('user authentication', function () {
+//describe('user authentication', function () {
 
-  beforeEach(function () {
-    if (window.__karma__) {
-      $('body').append('<form><input id="#nameInput"/><input id="#phoneNumberInput"/><input id="#emailInput"/><input id="#twitterInput"/><input id="#instagramInput"/><input id="#photoInput"/></form>')
-      $('body').append('<table><thead></thead><tbody id="tbody"><tr></tr></tbody></table>');
-      var FIREBASE_URL = 'https://address-booking.firebaseio.com',
-          fb           = new Firebase(FIREBASE_URL);
-      fb.unauth();
-      fb.authWithPassword({
-        email    : 'test@test.com',
-        password : '1234'
-        }, function(error, authData) {
-        if (error) {
-          console.log("Login Failed!", error);
-        } else {
-          console.log("Authenticated successfully with payload:", authData);
-        }
-      });
-    }
-  });
+  //beforeEach(function () {
+    //if (window.__karma__) {
+      //$('body').append('<form><input id="#nameInput"/><input id="#phoneNumberInput"/><input id="#emailInput"/><input id="#twitterInput"/><input id="#instagramInput"/><input id="#photoInput"/></form>')
+      //$('body').append('<table><thead></thead><tbody id="tbody"><tr></tr></tbody></table>');
+      //var FIREBASE_URL = 'https://address-booking.firebaseio.com',
+          //fb           = new Firebase(FIREBASE_URL);
+      //fb.unauth();
+      //fb.authWithPassword({
+        //email    : 'test@test.com',
+        //password : '1234'
+        //}, function(error, authData) {
+        //if (error) {
+          //console.log("Login Failed!", error);
+        //} else {
+          //console.log("Authenticated successfully with payload:", authData);
+        //}
+      //});
+    //}
+  //});
 
 
-  describe('login the user', function (){
-    it('should return a logged in user', function () {
-      fb.getAuth().should.not.be.null;
-    });
-  });
+  //describe('login the user', function (){
+    //it('should return a logged in user', function () {
+      //fb.getAuth().should.not.be.null;
+    //});
+  //});
 
-  describe('user data', function () {
-    it('should have a uid', function () {
-      fb.getAuth().uid.should.exist;
-    });
-  });
-});
+  //describe('user data', function () {
+    //it('should have a uid', function () {
+      //fb.getAuth().uid.should.exist;
+    //});
+  //});
+//});
 
 describe('add/remove address function', function () {
   beforeEach(function () {
