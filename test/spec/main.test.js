@@ -43,7 +43,8 @@ describe('hello', function () {
 describe('add/remove address function', function () {
   beforeEach(function () {
     if (window.__karma__) {
-      $('body').append('<table><thead></thead><tbody id="tbody"><td><input id="#nameInput"/></td><td><input id="#phoneNumberInput"/></td><td><input id="#emailInput"/></td><td><input id="#twitterInput"/></td><td><input id="#instagramInput"/></td><td><input id="#photoInput"/></td></tbody></table>');
+      $('body').append('<form><input id="#nameInput"/><input id="#phoneNumberInput"/><input id="#emailInput"/><input id="#twitterInput"/><input id="#instagramInput"/><input id="#photoInput"/></form>')
+      $('body').append('<table><thead></thead><tbody id="tbody"></tbody></table>');
     }
   });
 

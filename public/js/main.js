@@ -180,7 +180,7 @@ var $newContactButton = $('.newContactButton'),
 
     $tr.append($photoTd);$tr.append($nameTd);$tr.append($phoneNumberTd);$tr.append($emailTd);
     $tr.append($twitterTd);$tr.append($instagramTd);$tr.append($remove);
-    $tbody.append($tr);
+    $('tbody').append($tr);
 
   }
 
