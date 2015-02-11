@@ -43,7 +43,6 @@ var $newContactButton = $('.newContactButton'),
       }
     );
 
-    console.log(fb);
   });
 
   $('.loginButton').click(function(event){

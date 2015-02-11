@@ -1,0 +1,9 @@
+{
+  "firebase": "address-booking",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
