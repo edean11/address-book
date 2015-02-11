@@ -13,31 +13,59 @@ describe('hello', function () {
   });
 });
 
+//describe('user authentication', function () {
+
+  //describe('login the user', function (){
+    //it('should return a logged in user', function () {
+      //var FIREBASE_URL = 'https://address-booking.firebaseio.com',
+          //fb           = new Firebase(FIREBASE_URL);
+      //fb.unauth();
+      //fb.authWithPassword({
+        //email    : 'test@test.com',
+        //password : '1234'
+        //}, function(error, authData) {
+        //if (error) {
+          //console.log("Login Failed!", error);
+        //} else {
+          //console.log("Authenticated successfully with payload:", authData);
+        //}
+      //});
+      //fb.should.not.be.null;
+    //});
+  //});
+
+  ////describe('remove address function', function () {
+    ////it('should remove a row from the table', function () {
+    ////});
+  ////});
+//});
+
 describe('add/remove address function', function () {
-  before(function () {
+  beforeEach(function () {
     if (window.__karma__) {
-      $('body').append('<table><thead></thead><tbody id="tbody"></tbody></table>');
+      $('body').append('<table><thead></thead><tbody id="tbody"><td><input id="#nameInput"/></td><td><input id="#phoneNumberInput"/></td><td><input id="#emailInput"/></td><td><input id="#twitterInput"/></td><td><input id="#instagramInput"/></td><td><input id="#photoInput"/></td></tbody></table>');
     }
   });
 
   afterEach(function () {
-    $('tbody').empty();
+    $('body').empty();
   });
 
   describe('add address function', function (){
     it('should add a row to the table', function () {
-      addRowToTable();
-      $('body').children().find('tbody').children().length.should.equal(1);
+      createTableElementsFromInputs();
+      $('#tbody').children().length.should.equal(1);
     });
   });
 
-  describe('remove address function', function () {
+  describe('remove row function', function () {
     it('should remove a row from the table', function () {
-      var $tbody = $('body').children().find('tbody');
-      $tbody.append('<tr><button class="removeButton"></button></tr>')
-      addRowToTable();
-      $('.removeButton')[0].click();
-      $tbody.children().length.should.equal(1);
+      var $tbody = $('#tbody');
+      var $tr = $('<tr></tr>');
+      $tbody.append($tr);
+      var length = $tbody.children().length;
+      removeElement($tr);
+      $tbody.children().length.should.equal(length-1);
     });
   });
 });

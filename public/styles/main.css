@@ -1,3 +1,20 @@
+.login {
+  text-align: center;
+}
+
+.logout-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.login h1 {
+  font-size: 1.1em;
+}
 
 .hiddenContainer {
   display: none;
