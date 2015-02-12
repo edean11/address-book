@@ -1,6 +1,6 @@
 {
   "firebase": "address-booking",
-  "public": ".",
+  "public": "public",
   "ignore": [
     "firebase.json",
     "**/.*",
