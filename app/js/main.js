@@ -16,7 +16,8 @@ var $newContactButton = $('.newContactButton'),
     $tbody = $('#tbody'),
     $hiddenContainer = $('.hiddenContainer'),
     FIREBASE_URL = 'https://address-booking.firebaseio.com',
-    fb           = new Firebase(FIREBASE_URL);
+    fb           = new Firebase(FIREBASE_URL),
+    token        = fb.getAuth().token;
 
 
 ////////////////////////////////
@@ -88,7 +89,7 @@ var $newContactButton = $('.newContactButton'),
 
   // Get addresses function
   function JSONGetAddresses(uid){
-    $.get(FIREBASE_URL + '/users/' + uid + '/data/friends.json', function(res){
+    $.get(FIREBASE_URL + '/users/' + uid + '/data/friends.json?auth='+token, function(res){
       if(res !== null) {
         Object.keys(res).forEach(function(uuid){
           loadCurrentAddressBook(uuid, res[uuid]);
@@ -163,7 +164,7 @@ var $newContactButton = $('.newContactButton'),
 
   function postTableElementsFromInputs(){
     var $tr = $('tr:last-child');
-    var  url = FIREBASE_URL + '/users/' + fb.getAuth().uid + '/data/friends.json';
+    var  url = FIREBASE_URL + '/users/' + fb.getAuth().uid + '/data/friends.json?auth='+token;
     //var object = {photo: $photoInput, name: $nameInput,  phonenumber: $phoneNumberInput, email: $emailInput, twitter: $twitterInput, instagram: $instagramInput};
     var object = {photo: $('#photoInput').val(), name: $('#nameInput').val(),  phonenumber: $('#phoneNumberInput').val(), 
       email: $('#emailInput').val(), twitter: $('#twitterInput').val(), instagram: $('#instagramInput').val()};
@@ -179,7 +180,7 @@ var $newContactButton = $('.newContactButton'),
   $tbody.on("click", "button", function(){
     var $tr = $(this).closest('tr');
     var uuid = $tr.data('uuid');
-    var url = FIREBASE_URL + '/users/' + fb.getAuth().uid + '/data/friends/'+uuid+'.json';
+    var url = FIREBASE_URL + '/users/' + fb.getAuth().uid + '/data/friends/'+uuid+'.json?auth='+token;
     $.ajax({url: url, type:'DELETE'});
     removeElement($tr);
   });
