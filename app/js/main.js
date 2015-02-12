@@ -16,9 +16,7 @@ var $newContactButton = $('.newContactButton'),
     $tbody = $('#tbody'),
     $hiddenContainer = $('.hiddenContainer'),
     FIREBASE_URL = 'https://address-booking.firebaseio.com',
-    fb           = new Firebase(FIREBASE_URL),
-    token        = fb.getAuth().token;
-
+    fb           = new Firebase(FIREBASE_URL);
 
 ////////////////////////////////
 // Login/Logout Functionality //
