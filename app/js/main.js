@@ -81,6 +81,7 @@ var $newContactButton = $('.newContactButton'),
   //if authenticated, get addresses
 
   if (fb.getAuth()) {
+    var token        = fb.getAuth().token;
     $('.login').remove();
     $('.loggedIn').toggleClass('hidden');
 
