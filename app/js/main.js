@@ -17,7 +17,6 @@ var $newContactButton = $('.newContactButton'),
     $hiddenContainer = $('.hiddenContainer'),
     FIREBASE_URL = 'https://address-booking.firebaseio.com',
     fb           = new Firebase(FIREBASE_URL);
-    console.log(fb);
 
 
 ////////////////////////////////
