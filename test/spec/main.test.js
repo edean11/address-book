@@ -35,7 +35,6 @@ describe('hello', function () {
     //}
   //});
 
-
   //describe('login the user', function (){
     //it('should return a logged in user', function () {
       //fb.getAuth().should.not.be.null;
@@ -53,12 +52,12 @@ describe('add/remove address function', function () {
   beforeEach(function () {
     if (window.__karma__) {
       $('body').empty();
-      $('body').append('<form><input id="#nameInput"/><input id="#phoneNumberInput"/><input id="#emailInput"/><input id="#twitterInput"/><input id="#instagramInput"/><input id="#photoInput"/></form>')
+      $('body').append('<form><input id="#nameInput"/><input id="#phoneNumberInput"/><input id="#emailInput"/><input id="#twitterInput"/><input id="#instagramInput"/><input id="#photoInput"/></form>');
       $('body').append('<table><thead></thead><tbody id="tbody"></tbody></table>');
     }
   });
 
-  describe('add address function', function (){
+  describe('createTableElementsFromInputs', function (){
     it('should add a row to the table', function () {
       createTableElementsFromInputs();
       $('#tbody').children().length.should.equal(1);
